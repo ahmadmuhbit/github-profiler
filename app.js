@@ -19,9 +19,12 @@ let request = https.request(options, (response) => {
         body = body + data
     })
     response.on('end', () => {
-        console.log(body)
-        
+    // TODO: [x] Parse the data
+    // Convert String to JSON (Javascript object)
+    let profile = JSON.parse(body)
+    console.log(profile.avatar_url)
     })
+// TODO : Print the data out
 })
 
 request.end()
@@ -29,6 +32,3 @@ request.on('error', (e) => {
     console.log(e)
     
 })
-
-// TODO : Parse the data
-// TODO : Print the data out
