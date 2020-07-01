@@ -1,5 +1,4 @@
 // TODO: [x] Connect to GitHub API
-
 let https = require('https')
 
 const options = {
@@ -22,9 +21,10 @@ let request = https.request(options, (response) => {
     // TODO: [x] Parse the data
     // Convert String to JSON (Javascript object)
     let profile = JSON.parse(body)
-    console.log(profile.avatar_url)
+    //console.log(profile.login + ' owns ' + profile.public_repos + ' repo(s) ')
+    // TODO: [x] Print the data out
+    console.log(`${profile.login} owns ${profile.public_repos} repo(s) and has ${profile.followers} followers(s).`)    
     })
-// TODO : Print the data out
 })
 
 request.end()
